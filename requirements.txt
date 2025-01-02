@@ -1,6 +1,3 @@
 pandas
-numpy
 jupyter
-matplotlib
-seaborn
-sqlite3
+Rstudio
