@@ -1,0 +1,86 @@
+---
+title: "MilwaukeeBucksMargin"
+author: "Luke Morrison"
+date: "2025-01-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(tidyverse)
+
+
+df_quarterly <- read_csv("~/Desktop/nba-bucks-margin-by-quarter/notebooks/bucks_quarterly_scoring.csv")
+
+
+
+
+
+df_long <- df_quarterly %>%
+  pivot_longer(
+    cols = c("BucksAvg", "OppAvg"),
+    names_to = "Team",
+    values_to = "Points"
+  )
+
+
+ggplot(df_long, aes(x = factor(Quarter), y = Points, fill = Team)) +
+  
+  geom_col(position = position_dodge(width = 0.6), width = 0.5, color = "black") +
+  
+
+  scale_fill_manual(
+    values = c("BucksAvg" = "#00471B", "OppAvg" = "gray80"),
+    labels = c("BucksAvg" = "Bucks", "OppAvg" = "Opponent")
+  ) +
+  
+
+  geom_text(
+    aes(label = round(Points, 2)),
+    position = position_dodge(width = 0.6),
+    vjust = -0.4,  
+    size = 4,
+    fontface = "bold",
+    color = "black"
+  ) +
+  
+ 
+  labs(
+    title = "Milwaukee Bucks: Average Quarterly Scoring",
+    x = "Quarter",
+    y = "Points",
+    fill = NULL  
+  ) +
+  
+ 
+  theme_bw(base_size = 14) +
+  theme(
+
+    plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+    
+
+    axis.title.x = element_text(face = "bold", size = 14),
+    axis.title.y = element_text(face = "bold", size = 14),
+    
+
+    axis.text = element_text(color = "black"),
+    
+   
+    panel.grid.major = element_line(color = "gray85"),
+    panel.grid.minor = element_blank(),
+    
+ 
+    legend.position = "top"
+  )
+
+
+```
