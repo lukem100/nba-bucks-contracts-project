@@ -26,7 +26,8 @@ I used partial NBA data from a Kaggle dataset:
 6. Finally I exported the results to a bucks_quartely_scoring.csv for visualization with R.
 Note: The years of the data runs from 1968-2023 
 ## Results
-- Summarize your findings or key takeaways.
+- ![image](https://github.com/user-attachments/assets/200c0bd4-be88-4a04-bf02-2bebf3e722c0)
+- Overall I was able to find evidence that the Milwaukee bucks Average Quarterly Scoring is consistently above their opponents. This could be due to a lot of reasons, but one of the most interesting I could think of is the cohesive starting unit theory that states the following: if you have a solid starting five, they will come onto the court hot and push hard to score fast and early. As more of the bench comes on, the starter advantage wears off. This makes sense if we think about the Bucks lineup, with stars like Giannis Antetokounmpo and Khris Middleton, and earlir talents like the great Kareem Abdul-Jabaar. 
 
 ## License
 - MIT License. 
